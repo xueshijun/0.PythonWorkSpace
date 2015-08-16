@@ -1,0 +1,44 @@
+#coding=utf-8
+'''
+Created on 2015年7月17日
+
+@author: Administrator
+'''
+
+if __name__ == '__main__':
+    pass
+
+
+def fibs(num):
+    result=[0,1]
+    for i in range(num-2):
+        print(i)    
+        result.append(result[-2]+result[-1])
+    return result
+
+print(fibs(4))                                          #[0, 1, 1, 2]
+
+
+
+'''
+n和names两个变量同时引用一个列表
+'''
+def change(n):
+    n[0]='Mr.Gumby'
+names=['Mrs.Entity','Mrs.Thing']            
+
+'''
+当在序列中做切片的时候,返回的切片总是一个副本
+'''
+n=names
+print(n==names)                 #True
+print(n is names)               #True
+change(names)
+print(names)                                            #['Mr.Gumby', 'Mrs.Thing']
+
+
+n=names[:]
+print(n==names)                 #True
+print(n is names)               #False
+change(names[:])                
+print(names)                                            #['Mr.Gumby', 'Mrs.Thing']

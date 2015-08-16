@@ -1,0 +1,43 @@
+#coding=utf-8
+'''
+Created on 2015年7月20日
+
+@author: Administrator
+'''
+
+
+
+
+
+
+
+
+'''    方法与函数
+    绑定到对象特性上面的函数称为方法
+    
+'''
+
+
+
+
+
+
+
+
+
+
+class Person:
+    def setName(self,name):
+        self.name=name
+    def getName(self):
+        return self.name
+    def greet(self):
+        print("Hello,world!I'm %s" % (self.name))
+
+
+foo=Person()
+bar=Person()
+foo.setName('Luke Skywalker')
+bar.setName('Anakin Skywalker')
+foo.greet()                                             #Hello,world!I'm Luke Skywalker
+bar.greet()                                             #Hello,world!I'm Anakin Skywalker

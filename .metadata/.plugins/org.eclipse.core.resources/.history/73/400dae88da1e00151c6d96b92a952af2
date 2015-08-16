@@ -1,0 +1,4 @@
+#coding=utf-8
+__author__ = 'Administrator'
+var="你好中国";
+print(repr(var))

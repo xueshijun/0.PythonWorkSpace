@@ -1,0 +1,45 @@
+#coding=utf-8
+'''
+Created on 2015年7月20日
+
+@author: Administrator
+'''
+
+
+
+
+#################################################    多态
+'''    方法与函数
+    绑定到对象特性上面的函数称为方法
+'''
+#    从序列中随机选出元素,不关心是什么类型，只关心变量x中字符e出现多少次
+from random import choice
+x=choice(['Hello','world',[1,2,'3','e','e',4]])
+print(x.count('e'))                                        #2
+
+#    多态的多种形式
+1+2
+'fish' + 'license'
+def add_obj(x,y):
+    return x+y
+
+#    
+def length_msg(x):
+    print('the length of %s is %s' % (repr(x),len(x)))
+length_msg('Fnord')                                            #the length of 'Fnord' is 5
+length_msg([1,2,3,4])                                          #the length of [1, 2, 3, 4] is 4     
+
+#################################################    类
+class Person:
+    def setName(self,name):
+        self.name=name
+    def getName(self):
+        return self.name
+    def greet(self):
+        print("Hello,world!I'm %s" % (self.name))
+foo=Person()
+bar=Person()
+foo.setName('Luke Skywalker')
+bar.setName('Anakin Skywalker')
+foo.greet()                                             #Hello,world!I'm Luke Skywalker
+bar.greet()                                             #Hello,world!I'm Anakin Skywalker

@@ -1,0 +1,84 @@
+#coding=utf-8
+'''
+Created on 2015年7月20日
+
+@author: Administrator
+'''
+
+
+
+
+#################################################    多态
+'''    方法与函数
+    绑定到对象特性上面的函数称为方法
+'''
+#    从序列中随机选出元素,不关心是什么类型，只关心变量x中字符e出现多少次
+from random import choice
+x=choice(['Hello','world',[1,2,'3','e','e',4]])
+print(x.count('e'))                                        #2
+
+#    多态的多种形式
+1+2
+'fish' + 'license'
+def add_obj(x,y):
+    return x+y
+
+#    
+def length_msg(x):
+    print('the length of %s is %s' % (repr(x),len(x)))
+length_msg('Fnord')                                            #the length of 'Fnord' is 5
+length_msg([1,2,3,4])                                          #the length of [1, 2, 3, 4] is 4     
+
+#################################################    类
+class Person:
+    def setName(self,name):
+        self.name=name
+    def getName(self):
+        return self.name
+    def greet(self):
+        print("Hello,world!I'm %s" % (self.name))
+foo=Person()
+bar=Person()
+foo.setName('Luke Skywalker')
+bar.setName('Anakin Skywalker')
+foo.greet()                                             #Hello,world!I'm Luke Skywalker
+bar.greet()                                             #Hello,world!I'm Anakin Skywalker
+
+print(bar.name)                                         #Anakin Skywalker                                       #Hello,world!I'm Anakin Skywalker
+bar.name='Yoda'
+bar.greet()                                             #Hello,world!I'm Yoda  
+
+#    方法/绑定方法
+#将它们的第一个参数绑定到所属的实例上,这个参数可以不必提供
+class BirdClass:
+    song='HellKitty!'
+    def sing(self):                              ####方法#
+        print('I am singing %s' % (self.song))
+
+    #为了让方法或者特性变为私有,只要在它的名字前面加上双下划线
+    def __fly(self):
+        print('Bet you can\'t see me...')
+    
+    def fly(self):
+        self.__fly()
+def fun_demo():
+    print('I don\'t....')
+bird=BirdClass()
+bird.sing()                              #I am singing HellKitty!
+bird.sing=fun_demo
+bird.sing()                              #I don't....                                
+'''
+变量birdsong引用绑定方法bird.sing上,即意味着这还是对self参数 的访问（它仍旧绑定到类的相同的实例上）
+'''
+birdsong=bird.sing
+birdsong()                               #I don't....                                
+
+#bird.__fly()                            #不可访问
+bird.fly()                               #Bet you can't see me...
+
+#在类的内部定义中,所有以双下划线开始的名字都被翻译成前面加上单下划线和类名的形式
+bird=BirdClass()
+bird._BirdClass__fly()                   #Bet you can't see me...
+#################################################    类的命名空间
+
+                                                       

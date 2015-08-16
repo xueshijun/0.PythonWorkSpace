@@ -1,0 +1,25 @@
+#coding=utf-8
+'''
+Created on 2015年7月17日
+
+@author: Administrator
+'''
+
+if __name__ == '__main__':
+    pass
+
+
+def fibs(num):
+    result=[0,1]
+    for i in range(num-2):
+        print(i)    
+        result.append(result[-2]+result[-1])
+    return result
+
+print(fibs(4))                      #[0, 1, 1, 2]
+
+
+def change(n):
+    n[0]='Mr.Gumby'
+names=['Mrs.Entity','Mrs.Thing']
+change(names)
