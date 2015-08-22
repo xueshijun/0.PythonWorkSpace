@@ -2,6 +2,7 @@ MODULES_MANAGER_V2
 com.__init__|E:\0.PythonWorkSpace\HelloWorld\src\com\__init__.py
 com.a.__init__|E:\0.PythonWorkSpace\HelloWorld\src\com\a\__init__.py
 com.a.bmap|E:\0.PythonWorkSpace\HelloWorld\src\com\a\bmap.py
+com.main.CH11File|E:\0.PythonWorkSpace\HelloWorld\src\com\main\CH11File.py
 com.main.CH1_CH5|E:\0.PythonWorkSpace\HelloWorld\src\com\main\CH1_CH5.py
 com.main.CH6ตÝน้|E:\0.PythonWorkSpace\HelloWorld\src\com\main\CH6ตÝน้.py
 com.main.CH7Class|E:\0.PythonWorkSpace\HelloWorld\src\com\main\CH7Class.py
