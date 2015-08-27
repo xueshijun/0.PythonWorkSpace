@@ -8,7 +8,7 @@ h=mylib.Hello()
 h.sayHello()
 
 
-from com.main.mylib import Hello
+from com.primaryStudy.mylib import Hello
 
 h=Hello()
 h.sayHello()

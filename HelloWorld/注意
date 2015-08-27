@@ -1,0 +1,8 @@
+1.使用中文 
+请先确定你的IDE或者系统默认编码是utf-8,并且在中文前加上u  
+x=u'鱼'
+cu.execute("update catalog set name=? where id = 0",x)
+cu.execute("select * from catalog")
+cu.fetchall()
+[(0, 10, u'\u9c7c', u'Yu'), (1, 20, u'cba', u'Xu')]
+如果要显示出中文字体，那需要依次打印出每个字符串 
